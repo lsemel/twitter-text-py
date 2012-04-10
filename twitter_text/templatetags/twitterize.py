@@ -17,6 +17,6 @@ def twitter_text(text, search_query = False):
     tt = TwitterText(text)
     if search_query:
         tt.highlighter.hit_highlight(search_query)
-    tt.autolink.auto_link()
+    tt.autolink.auto_link(html_attrs={'target':'_blank'})
     return tt.text
 twitter_text.is_safe = True
